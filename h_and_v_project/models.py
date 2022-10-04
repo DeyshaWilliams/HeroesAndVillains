@@ -1,6 +1,8 @@
 from ftplib import MAXLINE
+import imp
 from unittest.util import _MAX_LENGTH
 from django.db import models
+from super_types.models import Super_types
 
 # Create your models here.
 class Super(models.Model):
@@ -9,4 +11,4 @@ class Super(models.Model):
     primary_ability = models.CharField(max_length=255)
     secondary_ability = models.CharField(max_length=255)
     catchphrase = models.CharField(max_length=255)
-    
+    super_types = models.ForeignKey(Super_types, on_delete=models.CASCADE, null=True)
